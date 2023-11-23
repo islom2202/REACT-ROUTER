@@ -1,0 +1,22 @@
+{
+ "landCruisers": [
+  {
+    "id": 1,
+    "name": "Rs. 2.10 Crore",
+    "image" : "https://imgd.aeplcdn.com/664x374/n/cw/ec/139739/land-cruiser-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80",
+    "description": "Toyota's luxury SUV, the Land Cruiser LC300, has been launched at the Auto Expo 2023. Price: The new Land Cruiser is priced at Rs 2.1 crore (ex-showroom pan India)."
+  },
+  {
+    "id": 2,
+    "name": "Toyota Land Cruiser ZX",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1Dg_Jh1egDzcgYHBy77ns_-dBDVEmAirtcJdyz7NEsDmN3E9cQsIktoOgfIvm_Na_MlY&usqp=CAU",
+    "description": "Toyota Land Cruiser ZX Diesel is the top model in the Toyota Land Cruiser lineup and the price of Land Cruiser top model is Rs. 2.10 Crore. Toyota Land Cruiser ZX Diesel is available in Automatic transmission and offered in 5 colours: Attitude Black, Dark Blue Mica, Dark Red Mica Metallic, Precious White Pearl and Super White."
+  },
+  {
+    "id": 3,
+    "name": "2018 Toyota Land Cruiser",
+    "image": "https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/chrome/white/2018TOS120001_1280_07",
+    "description": "The 2018 Toyota Land Cruiser is equal parts luxury SUV and all-terrain workhorse. This three-row SUV has been in the Toyota lineup for decades, though the current model is far from being the utilitarian no-frills conveyance it was years ago. Don’t think the Land Cruiser has gone soft, however. With its powerful V-8 engine, standard four-wheel drive, and lengthy lineup of off-road hardware, this Toyota SUV is one of the most tenacious trucks when the road ahead has other SUVs spinning their wheels in frustration."
+  }
+  ]
+}

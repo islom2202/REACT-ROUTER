@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+$font-sizes:(
+  a: 18px,
+  p: 18px,
+);
+
+@each $tag,$size in $font-sizes{
+  #{$tag}{
+    font-size: $size;
+  }
+} 
+body{
+  padding: 20px 5vw;
+}
+section{
+  padding: 40px 0;
+}

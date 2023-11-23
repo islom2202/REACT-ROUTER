@@ -1,0 +1,17 @@
+.cars{
+  a{
+    font-weight: 600;
+  }
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    li{
+      img{
+        width: 100%;
+        aspect-ratio: 1 / 0.5;
+        object-fit: contain;
+      }
+    }
+  }
+}
