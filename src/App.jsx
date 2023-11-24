@@ -7,7 +7,6 @@ import { Cars } from './Pages/Cars/Cars'
 import { Car } from './Pages/Cars/Car'
 import { LandCruisers } from './Pages/Cars/LandCruisers'
 import { NoMatch } from './Pages/NoMatch'
-import { data } from 'autoprefixer'
 import { NewCars } from './Pages/Cars/NewCars'
 import { BrandCars } from './Pages/Cars/BrandCars'
 export const App = () => {
@@ -18,7 +17,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="cars" element={<Cars />}/>
         {/*URL Params*/}
-        <Route path="cars/:carsId" element={<Car />} />
+        <Route path=":carsId" element={<Car />} />
         {/*Nested Routes*/}
         <Route path="landCruisers" element={<LandCruisers />}>
           <Route path="newCars" element={<NewCars />} />

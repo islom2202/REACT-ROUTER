@@ -26,9 +26,10 @@ export const Cars = () => {
       <ul>
         {data.map((car) => (
           // ID PARAMS
-          <li key={car.id} onClick={()=>navigate(`${car.id}`)}>
+          <li key={car.id} onClick={() => navigate(`/${car.id}`)}>
             <img src={car.image} alt={car.name} />
             {car.name}
+            {}
           </li>
         ))}
       </ul>
