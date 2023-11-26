@@ -4,6 +4,7 @@
   padding: 0;
   list-style: none;
   scroll-behavior: smooth;
+  text-decoration: none;
 }
 $font-sizes:(
   a: 18px,
@@ -21,3 +22,15 @@ body{
 section{
   padding: 40px 0;
 }
+.active{
+    position: relative;
+    &::after{
+      content: "";
+      height: 3px;
+      width: 100%;
+      background-color: red;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+  }

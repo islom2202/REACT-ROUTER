@@ -5,17 +5,5 @@ header{
   a{
     text-decoration: none;
   }
-  .active{
-    position: relative;
-    &::after{
-      content: "";
-      height: 3px;
-      width: 100%;
-      background-color: red;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-    }
-  }
   }
 }

@@ -1,14 +1,12 @@
 import React from 'react'
-import { useNavigate, Link, Outlet } from 'react-router-dom'
+import { useNavigate, NavLink, Outlet } from 'react-router-dom'
 export const LandCruisers = () => {
   const navigate = useNavigate()
   return (
     <div>
       <h2>Land Cruisers</h2>
-      {/*Navigate Back*/}
-      <Link to="newCars">New Cars (nested)</Link>{" "}
-      <Link to="brandCars">Brand Cars (nested)</Link>
-     
+      <NavLink to="newCars">New Cars (nested)</NavLink>{" "}
+      <NavLink to="brandCars">Brand Cars (nested)</NavLink>
       <hr />
       <Outlet />
       <hr />
@@ -16,6 +14,7 @@ export const LandCruisers = () => {
       <button onClick={() => navigate("/landCruisers", { replace: true })}>
         Leave Website
       </button>{" "}
+      {/*Navigate Back*/}
       <button onClick={() => navigate(-1)}>Move Back</button>
     </div>
   )
