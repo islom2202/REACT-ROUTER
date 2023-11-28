@@ -40,8 +40,11 @@ export const Pagination = () => {
         {NumberOfPages.map((el) => (
           <button
             key={el.id}
-            style={{ padding: "10px 15px" }}
-            onClick={() => setSearchParams({page: el})}
+            style={{
+              padding: "10px 15px",
+              backgroundColor: el == searchParams.get("page") ? "greenyellow" : null
+            }}
+            onClick={() => setSearchParams({ page: el })}
           >
             {el}
           </button>
