@@ -28,7 +28,7 @@ export const Cars = () => {
           // ID PARAMS
           <li key={car.id} onClick={() => navigate(`/${car.id}`)}>
             <img src={car.image} alt={car.name} />
-            {car.name}
+            {car.name + " " + ("by ID")}
             {}
           </li>
         ))}
