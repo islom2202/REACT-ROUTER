@@ -9,7 +9,7 @@ import { LandCruisers } from './Pages/Cars/LandCruisers'
 import { NoMatch } from './Pages/NoMatch'
 import { NewCars } from './Pages/Cars/NewCars'
 import { BrandCars } from './Pages/Cars/BrandCars'
-// import { Pagination } from './Pages/Pagination'
+import { Pagination } from './Pages/Pagination'
 export const App = () => {
   return (
     <div>
@@ -26,7 +26,7 @@ export const App = () => {
           {/*Index Route*/}
           <Route index element={<NewCars />} />
         </Route>
-        {/* <Route path='/pagination' element={<Pagination/>}/> */}
+        <Route path='/pagination' element={<Pagination/>}/>
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <Footer />
