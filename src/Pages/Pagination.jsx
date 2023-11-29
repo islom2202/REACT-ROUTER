@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams, NavLink } from 'react-router-dom'
 export const Pagination = () => {
-  const API = "https://jsonplaceholder.typicode.com/posts"
+  // const API = "https://jsonplaceholder.typicode.com/posts"
 
   const [posts, setPosts] = useState([])
   // Fetch Data
