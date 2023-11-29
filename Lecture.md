@@ -10,20 +10,3 @@
 8. Relative Links -
 9. Lazy Loading -
 10. Authentication and protected routes - 
-11. To host on render: 
- - Run this command first:
- ~~~ 
- npm i json-server cors json-serve
- ~~~
- - Then add this inside scripts brace in packages.json: 
- ~~~ 
- "start": "node main.jsx",
- ~~~ 
- - Lastly on Render website if it asks for Build command, in case you use npm:
- ~~~
- npm run build
- ~~~
-- For Start Command type this:
-~~~
-npm run start
-~~~
