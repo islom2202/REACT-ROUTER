@@ -36,10 +36,10 @@ export const Pagination = () => {
       </ul>
 
       {/* Pages */}
-      <ul style={{ listStyle: "none", display: "flex" }}>
+      <div style={{ listStyle: "none", display: "flex" }}>
         {NumberOfPages.map((el) => (
           <button
-            key={el.id}
+            key={el}
             style={{
               padding: "10px 15px",
               backgroundColor: el == searchParams.get("page") ? "greenyellow" : null
@@ -49,7 +49,7 @@ export const Pagination = () => {
             {el}
           </button>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

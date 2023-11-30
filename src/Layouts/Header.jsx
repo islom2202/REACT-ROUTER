@@ -8,6 +8,7 @@ export const Header = () => {
         <NavLink to="/cars">Cars</NavLink>
         <NavLink to="/landCruisers">Land Cruisers</NavLink>
         <NavLink to="/pagination">Pagination</NavLink>
+        <NavLink to="/about">About (lazy loading)</NavLink>
       </nav>
     </header>
   )
