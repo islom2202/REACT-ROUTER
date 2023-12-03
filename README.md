@@ -5,7 +5,7 @@
 npm install react-router-dom@6
 ~~~
 1. NavLink, Link
-2. Programmatic navigation (from one page to another fter clicking link or button)
+2. Programmatic navigation (from one page to another after clicking link or button), using **useNavigate** or better **Navigate**.
 3. No Match page (if route is not found)
 4. Nested Routes (to make sort of tab navigation inside page, with the use of <Outlet/>, which gives seemless use experience)
 5. Index Route (to make child, nested element value on a parents level, i. e. 'default')

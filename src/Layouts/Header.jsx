@@ -12,7 +12,7 @@ export const Header = () => {
         <NavLink to="/pagination">Pagination</NavLink>
         <NavLink to="/about">About (lazy loading)</NavLink>
         {!auth.user && <NavLink to="/login">Login</NavLink>}
-        {auth.user && <NavLink to="/profile">Profile</NavLink>}
+        <NavLink to="/profile">Profile</NavLink>
       </nav>
     </header>
   )

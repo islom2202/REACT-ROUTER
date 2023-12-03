@@ -13,7 +13,7 @@ import { Pagination } from './Pages/Pagination'
 import { Login } from './components/Login'
 import { Profile } from './components/Profile'
 import { AuthProvider } from './components/Auth'
-
+import { RequireAuth } from './components/requireAuth'
 // Lazy Loading Component
 const LazyAbout = React.lazy(() => import('./Pages/About'))
 
@@ -44,7 +44,14 @@ export const App = () => {
             }
           />
           <Route path="login" element={<Login />} />
-          <Route path="profile" element={<Profile />} />
+          <Route
+            path="profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
           <Route path="*" element={<NoMatch />} />
         </Routes>
         <Footer />

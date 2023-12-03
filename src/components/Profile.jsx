@@ -8,7 +8,6 @@ export const Profile = () => {
      auth.logout()
      navigate("/")
   }
-  console.log(auth);
   return (
     <div>
       <h2>Welcome {auth.user}</h2>
