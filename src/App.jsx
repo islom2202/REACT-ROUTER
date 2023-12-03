@@ -10,37 +10,45 @@ import { NoMatch } from './Pages/NoMatch'
 import { NewCars } from './Pages/Cars/NewCars'
 import { BrandCars } from './Pages/Cars/BrandCars'
 import { Pagination } from './Pages/Pagination'
+import { Login } from './components/Login'
+import { Profile } from './components/Profile'
+import { AuthProvider } from './components/Auth'
+
 // Lazy Loading Component
 const LazyAbout = React.lazy(() => import('./Pages/About'))
 
 export const App = () => {
   return (
     <div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="cars" element={<Cars />} />
-        {/*URL Params*/}
-        <Route path=":carsId" element={<Car />} />
-        {/*Nested Routes*/}
-        <Route path="landCruisers" element={<LandCruisers />}>
-          <Route path="newCars" element={<NewCars />} />
-          <Route path="brandCars" element={<BrandCars />} />
-          {/*Index Route*/}
-          <Route index element={<NewCars />} />
-        </Route>
-        <Route path="/pagination" element={<Pagination />} />
-        <Route
-          path="/about"
-          element={
-            <Suspense fallback={<div>"Loading..."</div>}>
-              <LazyAbout />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<NoMatch />} />
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="cars" element={<Cars />} />
+          {/*URL Params*/}
+          <Route path=":carsId" element={<Car />} />
+          {/*Nested Routes*/}
+          <Route path="landCruisers" element={<LandCruisers />}>
+            <Route path="newCars" element={<NewCars />} />
+            <Route path="brandCars" element={<BrandCars />} />
+            {/*Index Route*/}
+            <Route index element={<NewCars />} />
+          </Route>
+          <Route path="/pagination" element={<Pagination />} />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<div>"Loading..."</div>}>
+                <LazyAbout />
+              </Suspense>
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </div>
   )
 }
