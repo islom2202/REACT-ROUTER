@@ -25,7 +25,114 @@ npm install react-router-dom@6
 - Suspense (fnc from React)
 - "React.lazy(()=>import(pathName))"
 - Wrap Route component inside Suspense, which has fallback for loading
-10. Authentication and protected routes - 
+10. Authentication and protected routes.  Hre are step by step example:
+ - 1. Step one is to create **Auth.jsx**:
+ ~~~
+ import React, {createContext, useContext, useState} from 'react'
+const AuthContext = createContext(null)
+
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null)
+  const login = (user) =>{
+     setUser(user)
+  }
+  const logout = () =>{ 
+    setUser(null)
+  }
+  return (
+    <AuthContext.Provider value={{user, login, logout}}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+
+export const useAuth = () => { 
+  return useContext(AuthContext)
+}
+~~~
+- 2. Step two is to create **RequireAuth.jsx**:
+~~~
+import { Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "./Auth";
+export const RequireAuth = ({children}) => {
+const auth = useAuth();
+const location = useLocation();
+return !auth.user ? <Navigate to="/login" state={{path: location.pathname}}/> :  children
+}
+~~~
+- 3. Wrap Component that should be protected in **App.jsx**:
+~~~
+import React, { Suspense } from 'react'
+import {Route, Routes} from "react-router-dom"
+import { Header } from './Layouts/Header'
+import { Footer } from './Layouts/Footer'
+import { Home } from './Pages/Home'
+import { Cars } from './Pages/Cars/Cars'
+import { Car } from './Pages/Cars/Car'
+import { LandCruisers } from './Pages/Cars/LandCruisers'
+import { NoMatch } from './Pages/NoMatch'
+import { NewCars } from './Pages/Cars/NewCars'
+import { BrandCars } from './Pages/Cars/BrandCars'
+import { Pagination } from './Pages/Pagination'
+import { Login } from './components/Login'
+import { Profile } from './components/Profile'
+import { AuthProvider } from './components/Auth'
+import { RequireAuth } from './components/requireAuth'
+import { useLocation } from 'react-router-dom'
+
+
+// Lazy Loading Component
+const LazyAbout = React.lazy(() => import('./Pages/About'))
+
+export const App = () => {
+  // For testin useLocation()
+  const location = useLocation()
+  console.log("pathName: " + location.pathname)
+  console.log("search: " + location.search)
+  console.log("hash: " + location.hash)
+  console.log("state: " + location.state)
+  return (
+    <div>
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="cars" element={<Cars />} />
+          {/*URL Params*/}
+          <Route path=":carsId" element={<Car />} />
+          {/*Nested Routes*/}
+          <Route path="landCruisers" element={<LandCruisers />}>
+            <Route path="newCars" element={<NewCars />} />
+            <Route path="brandCars" element={<BrandCars />} />
+            {/*Index Route*/}
+            <Route index element={<NewCars />} />
+          </Route>
+          <Route path="/pagination" element={<Pagination />} />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<div>"Loading..."</div>}>
+                <LazyAbout />
+              </Suspense>
+            }
+          />
+          <Route path="login" element={<Login />} />
+          <Route
+            path="profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
+    </div>
+  )
+}
+~~~
 11. Context API (hook in React) - is used to create data or state that is accessible for all components, just like Redux Toolkit. Here is an example of how to use it : 
 - 1. First step:  Create Context:
 ~~~ 
