@@ -14,10 +14,19 @@ import { Login } from './components/Login'
 import { Profile } from './components/Profile'
 import { AuthProvider } from './components/Auth'
 import { RequireAuth } from './components/requireAuth'
+import { useLocation } from 'react-router-dom'
+
+
 // Lazy Loading Component
 const LazyAbout = React.lazy(() => import('./Pages/About'))
 
 export const App = () => {
+  // For testin useLocation()
+  const location = useLocation()
+  console.log("pathName: " + location.pathname)
+  console.log("search: " + location.search)
+  console.log("hash: " + location.hash)
+  console.log("state: " + location.state)
   return (
     <div>
       <AuthProvider>

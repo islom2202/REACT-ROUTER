@@ -6,6 +6,7 @@ npm install react-router-dom@6
 ~~~
 1. NavLink, Link
 2. Programmatic navigation (from one page to another after clicking link or button), using **useNavigate** or better **Navigate**.
+2. What does **{replace: true}** do? - instead of adding new route in the history stack it replaces the given route with a new route.
 3. No Match page (if route is not found)
 4. Nested Routes (to make sort of tab navigation inside page, with the use of <Outlet/>, which gives seemless use experience)
 5. Index Route (to make child, nested element value on a parents level, i. e. 'default')
@@ -73,4 +74,9 @@ const Dashboard = () => {
 
 export default Dashboard;
 ~~~
-
+12. useLocation() - check requireAuth and Login components:
+ - const location = useLocation()
+  console.log("pathName: " + location.pathname)
+  console.log("search: " + location.search)
+  console.log("hash: " + location.hash)
+  console.log("state: " + location.state)
