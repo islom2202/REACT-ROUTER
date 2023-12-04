@@ -25,7 +25,7 @@ npm install react-router-dom@6
 - Suspense (fnc from React)
 - "React.lazy(()=>import(pathName))"
 - Wrap Route component inside Suspense, which has fallback for loading
-10. Authentication and protected routes.  Hre are step by step example:
+10. Authentication and protected routes.  Here are step by step examples:
  - 1. Step one is to create **Auth.jsx**:
  ~~~
  import React, {createContext, useContext, useState} from 'react'
