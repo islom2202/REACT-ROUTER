@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 export const Cars = () => {
   // For programmtaic navigation we first define funct
   const navigate = useNavigate()
@@ -26,10 +26,9 @@ export const Cars = () => {
       <ul>
         {data.map((car) => (
           // ID PARAMS
-          <li key={car.id} onClick={() => navigate(`/${car.id}`)}>
+          <li key={car.id} onClick={() => navigate(`${car.id}`)}>
             <img src={car.image} alt={car.name} />
             {car.name + " " + ("by ID")}
-            {}
           </li>
         ))}
       </ul>

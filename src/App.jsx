@@ -35,7 +35,7 @@ export const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="cars" element={<Cars />} />
           {/*URL Params*/}
-          <Route path=":carsId" element={<Car />} />
+          <Route path="cars/:carsId" element={<Car />} />
           {/*Nested Routes*/}
           <Route path="landCruisers" element={<LandCruisers />}>
             <Route path="newCars" element={<NewCars />} />
